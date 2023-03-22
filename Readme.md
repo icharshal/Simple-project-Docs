@@ -26,7 +26,11 @@ git revert
 git restore --staged <filename>
 - Used to untrack staged file
 
-
+git push origin master
+- push local repo to github --> first set origin of you github url to local --- enter userid and password
+ 
+git pull origin main/master
+- save changes from github to local repo
 
 
 
