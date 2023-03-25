@@ -1,0 +1,21 @@
+version: '3'
+services:
+  myapp1:
+    image: nginx
+    ports:
+      - 8090:80
+  database:
+    image: redis
+    ports:
+      - 6379:3000
+  jenkins:
+    image: jenkins/jenkins:lts
+    privileged: true
+    user: root
+    ports:
+      - 8080:8080
+      - 50000:50000
+    container_name: jenkins
+    volumes:
+      - /home/${myname}/jenkins_compose/jenkins_configuration:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
